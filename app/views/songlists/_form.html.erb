@@ -1,0 +1,12 @@
+<%= simple_form_for(@songlist) do |form| %>
+    <%= form.input :name,label:"歌名" %>
+    <%= form.input :key%>
+    <%= form.input :band,label:"樂團" %>
+    <%= form.input :url,label:"詩歌網址" %>
+    <%= form.input :lyrics,label:"歌詞" %>
+    <%= form.input :category,label:"類別" %>
+    <%= form.input :mark,label:"標記" %>
+
+    <%= form.submit %>
+
+<% end %>
