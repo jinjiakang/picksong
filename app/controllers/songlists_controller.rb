@@ -4,7 +4,7 @@ class SonglistsController < ApplicationController
   # GET /songlists
   # GET /songlists.json
   def index
-    @songlists = Songlist.all
+    @songlists = Songlist.all.includes(:user)
   end
 
   # GET /songlists/1
@@ -14,17 +14,18 @@ class SonglistsController < ApplicationController
 
   # GET /songlists/new
   def new
-    @songlist = Songlist.new
+     @songlist = Songlist.new
   end
 
   # GET /songlists/1/edit
   def edit
+    authorize! :update, @songlist
   end
 
   # POST /songlists
   # POST /songlists.json
   def create
-    @songlist = current_user.Songlist.new(songlist_params)
+    @songlist = current_user.songlists.new(songlist_params)
 
     respond_to do |format|
       if @songlist.save
