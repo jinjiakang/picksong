@@ -4,7 +4,12 @@ class SonglistsController < ApplicationController
   # GET /songlists
   # GET /songlists.json
   def index
-    @songlists = Songlist.all.includes(:user)
+     @songlists = Songlist.all.includes(:user)
+      if params[:search]
+          @songlists = Songlist.where('name LIKE ? OR band LIKE ?', "%#{params[:search]}%","%#{params[:search]}%")
+      else
+          @songlists = Songlist.all
+      end
   end
 
   # GET /songlists/1

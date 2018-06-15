@@ -1,7 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>歌單</h1>
-
+<form class="form-inline mb-3">
+<%= form_tag songlists_path, method: :get do %>
+    <%= text_field_tag :search, params[:search], placeholder: "輸入歌名、樂團",class:"form-control mr-sm-2" %>
+    <%= submit_tag "搜尋", name: nil, class: "btn btn-outline-secondary my-2 my-sm-0" %>
+<% end %>
+</form>
 <table class="table">
   <thead>
     <tr>
