@@ -2,4 +2,12 @@
 
 <%= render 'form', songlist: @songlist %>
 
+<h3>多筆輸入</h3>
+    <%= form_tag import_songlists_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "上傳" %>
+    <% end %>
+
 <%= link_to '返回', songlists_path %>
+
+

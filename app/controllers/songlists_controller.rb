@@ -66,6 +66,11 @@ class SonglistsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def import
+    Songlist.import(params[:file])
+    redirect_to songlists_path, notice: "新增成功"
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
