@@ -4,4 +4,6 @@ Rails.application.routes.draw do
     collection { post :import }
   end
   root "pages#index"
+  
+  get "pages/download_csv"
 end

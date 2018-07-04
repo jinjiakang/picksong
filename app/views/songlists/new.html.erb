@@ -1,13 +1,44 @@
 <h1>新增詩歌庫</h1>
 
 <%= render 'form', songlist: @songlist %>
+<!--<%= link_to '返回', songlists_path ,class:"btn btn-danger mt-3"%>-->
 
-<h3>多筆輸入</h3>
-    <%= form_tag import_songlists_path, multipart: true do %>
+<!--<h3 class="mt-5">多筆輸入</h3>-->
+
+<!--    <%= form_tag import_songlists_path, multipart: true do %>-->
+<!--        <%= file_field_tag :file %>-->
+<!--        <%= submit_tag "上傳" %>-->
+<!--    <% end %>-->
+    
+
+
+<button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#exampleModalCenter">
+  多筆輸入
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">多筆輸入</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <%= form_tag import_songlists_path, multipart: true do %>
         <%= file_field_tag :file %>
-        <%= submit_tag "上傳" %>
-    <% end %>
-
-<%= link_to '返回', songlists_path %>
-
-
+        <div class="mt-5">
+            <%= link_to '下載範例', pages_download_csv_url %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+        <%= submit_tag "上傳",class:"btn btn-primary" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
