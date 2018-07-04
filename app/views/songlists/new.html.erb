@@ -29,16 +29,18 @@
       <div class="modal-body">
 
         <%= form_tag import_songlists_path, multipart: true do %>
-        <%= file_field_tag :file %>
+            <%= file_field_tag :file %>
+            <%= submit_tag "上傳" %>
+        <% end %>
         <div class="mt-5">
             <%= link_to '下載範例', pages_download_csv_url %>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
-        <%= submit_tag "上傳",class:"btn btn-primary" %>
+        
+        
       </div>
-      <% end %>
     </div>
   </div>
 </div>
