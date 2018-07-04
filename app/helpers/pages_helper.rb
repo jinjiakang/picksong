@@ -13,8 +13,15 @@ module PagesHelper
         end
         return @rnumber
     end
-    def embed_url(url)
-        @i = url.index("=", 1) +1
-        return url[@i..-1]
+    def embed_youtube_url(url)
+        if url =~ /www.youtube.com/ 
+            @i = url.index("=", 1) +1
+            return url[@i..-1]
+        elsif url =~ /youtu.be/
+            @i = url.rindex("/") +1
+            return url[@i..-1]
+        else
+            return url
+        end
     end
 end

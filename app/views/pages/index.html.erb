@@ -1,5 +1,5 @@
 <div class="jumbotron">
-  <h1 class="display-4">Picksong</h1>
+  <h1 class="display-5">Picksong</h1>
   <p class="lead">歡迎來到詩歌網站平台</p>
   <hr class="my-4">
   <p>歡迎大家集思廣益分享所知道的詩歌</p>
@@ -7,10 +7,10 @@
     <a class="btn btn-primary btn-lg" href="#" role="button">隨機點歌</a>
   </p>
     <% r = rand_id %>
-    <% link_to Songlist.find(r).name, Songlist.find(r).url, class:"text-success" %>
+    <%= link_to Songlist.find(r).name, Songlist.find(r).url, class:"text-success" %>
     
-    <div class="embed-responsive embed-responsive-16by9 mt-5 mb-5">
-      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= embed_url(Songlist.find(r).url) %>" allowfullscreen></iframe>
+    <div class="embed-responsive embed-responsive-16by9 mt-3 mb-5">
+      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<%= embed_youtube_url(Songlist.find(r).url) %>" allowfullscreen></iframe>
     </div>
 </div>
 
