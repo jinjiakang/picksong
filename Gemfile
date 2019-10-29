@@ -22,7 +22,7 @@ gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
-gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'devise', '~> 4.7'
 
 gem 'cancancan', '~> 2.0'
 
